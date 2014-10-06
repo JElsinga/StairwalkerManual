@@ -1,0 +1,60 @@
+\documentclass{article}
+
+\newcommand*{\UTlogo}{\fbox{$\mathcal{UT}$}}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%	Page taken from: http://www.latextemplates.com/template/vertical-line-title-page
+%----------------------------------------------------------------------------------------
+\newcommand*{\titleGM}{\begingroup
+\hbox{
+\hspace*{0.2\textwidth}
+\rule{1pt}{\textheight}
+\hspace*{0.05\textwidth}
+\parbox[b]{0.75\textwidth}{
+
+{\noindent\Huge\bfseries Stairwalker \\[0.5\baselineskip] Manual}\\[2\baselineskip]
+{\large \textit{We could write something here}}\\[4\baselineskip]
+{\Large \textsc{Dennis Muller} \\[0.25\baselineskip] \Large \textsc{Jochem Elsinga}}
+
+\vspace{0.5\textheight}
+{\today}\\
+{\noindent Universiteit Twente \UTlogo}\\[\baselineskip]
+}}
+\endgroup}
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT
+%----------------------------------------------------------------------------------------
+\begin{document}
+
+\pagestyle{empty}
+
+\titleGM
+
+\tableofcontents
+\pagebreak
+\pagestyle{plain}
+%----------------------------------------------------------------------------------------
+%	Sections
+%----------------------------------------------------------------------------------------
+
+\section{Introduction}
+
+\pagebreak
+\section{Set Up}
+\input{Setting_Up/setup}
+
+\pagebreak
+\section{Deployment}
+\input{Deployment/deployment}
+
+\pagebreak
+\section{Development}
+\input{Development/development}
+
+\pagebreak
+\section{Conclusion}
+
+
+\end{document}
