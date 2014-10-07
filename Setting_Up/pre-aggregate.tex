@@ -1,0 +1,24 @@
+\subsubsection{Description of Process}
+Stairwalker makes use of the Pre-Aggregate functions. These functions create a granularity in the dataset and calculate blocks at the lowest granularity for certain dimensions. Then subsequent blocks of higher granularity are built up from lower blocks. This creates a new dataset which as summarized the original dataset in terms of blocks which represent some significant data for every level of granularity and dimension.
+
+%Is dit duidelijk? Klopt dit eigenlijk??
+%Nog iets met index of zo...
+\noindent Concretely take the dataset of tweets sent within the netherlands. A pre-aggregation of this data could be in the following form. As significant data we consider the number of tweets in the x- and y-coordinate dimensions. We then set a highest granularity (zoom). The pre-aggregate algorithm then creates blocks bounded by the x- and y-coordinates at the highest granularity and for all those blocks calculates the number of tweets within those coordinates. Then each subsequent layer is built up from the previous layer. The final result is a new dataset which contains all blocks with the number of tweets in a coordinate block at each level of granularity.
+
+\subsubsection{PreAggregate Tool}
+To do the Pre-Aggregation step a tool has been develped which is explained here.
+
+\noindent The tool can be found in the directory \lstinline$neogeo/pre-aggregate-tools/$. To generate the binary tools from source the Appassembler plugin of Maven is used. Run the following command to generate the tool.
+\begin{lstlisting}
+mvn package appassembler:assemble
+\end{lstlisting}
+After successful completion of this command a new directory \lstinline$appassembler$ will have been created in the \lstinline$target$ directory containing a \lstinline$repo$ and a \lstinline$bin$ directory. The \lstinline$bin$ directory contains the actual binaries of the tool (in both Linux/Unix and Windows version) and the \lstinline$repo$ directory contains the tool dependencies. The tool should now be ready for use.
+\subsubsection{Current Status Support of Datatypes}
+
+\subsubsection{Current Status Support of Aggregation Types}
+
+\begin{enumerate}
+	\item Aggregate Axis
+	\item Metric Axis
+	\item Nominal Axis
+\end{enumerate}

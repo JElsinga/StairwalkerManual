@@ -1,7 +1,27 @@
 \documentclass{article}
 
-\usepackage{hyperref}
+\usepackage[hidelinks]{hyperref}
 \usepackage{enumitem}
+\usepackage{todonotes}
+\usepackage{listings}
+\usepackage{color}
+%\usepackage{marginnote}
+%REMOVE BELOW COMMAND TO GET NORMAL VIEW
+%\usepackage[top=1.5cm, bottom=1.5cm, outer=5cm, inner=2cm, heightrounded, marginparwidth=2.5cm, marginparsep=2cm]{geometry}
+
+\definecolor{light-gray}{gray}{0.95}
+\lstset{mathescape,
+		basicstyle=\ttfamily,
+		backgroundcolor=\color{light-gray}
+		}
+\lstset{numbers=right, 
+                numberstyle=\tiny, 
+                breaklines=true,
+                backgroundcolor=\color{light-gray},
+                xleftmargin=\parindent,
+                %xleftmargin=1cm,
+                xrightmargin=\parindent,
+                numbersep=5pt}
 
 \newcommand*{\UTlogo}{\fbox{$\mathcal{UT}$}}
 
@@ -16,6 +36,7 @@
 \hspace*{0.05\textwidth}
 \parbox[b]{0.75\textwidth}{
 
+{\noindent\LARGE \textit{Margin notes version!!}} \\[2\baselineskip]
 {\noindent\Huge\bfseries Stairwalker \\[0.5\baselineskip] Manual}\\[2\baselineskip]
 {\large \textit{We could write something here}}\\[4\baselineskip]
 {\Large \textsc{Dennis Muller} \\[0.25\baselineskip] \Large \textsc{Jochem Elsinga}}
