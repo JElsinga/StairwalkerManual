@@ -1,0 +1,29 @@
+At the moment the stairwalker program only works with the PostgreSQL\footnote{PostgreSQL: http://www.postgresql.org} and MonetDB\footnote{MonteDB: http://www.monetdb.org} database management systems. This manual will only concern itself with PostgreSQL (shortened to Postgres). Any further reference to a database implies a Postgres database.
+
+In this section a walk through explaining the steps needed to setup PostgreSQL along with PostGIS\footnote{PostGIS: http://www.postgis.net} and a custom made database extension for stairwalker on an Ubuntu Linux kernel.
+
+\subsubsection{PostgreSQL Database Manager Setup}
+Installing Postgres on Linux should be straight forward. In the terminal search for postgresql and then choose which version of postgresql should be installed. Below the commands used to search and install version 9.1 of Postgres are shown.
+\begin{enumerate}
+\item aptitude search postgresql
+\item apt-get install postgresql-9.1
+\end{enumerate}
+For further information or if there are difficulties with the installation more details can be found on the installation page of the \href{http://www.postgresql.org/download/}{PostgreSQL website}.  
+
+\subsubsection{PostgreSQL Configuration}
+Once Postgres is installed on Linux two alterations will need to be made to the configuration files so that the database can be accessed from outside and by other users.
+
+First off in the postgresql.conf file the listen\_addresses need to be changed from localhost to all. This can be done as follows (assuming version 9.1 of postgres).
+
+\begin{enumerate}
+\item cd /etc/postgresql/9.1/main
+\item vi postgresql.conf
+\item change listen\_addresses = `localhost' $\rightarrow$ listen\_addresses = `*'
+\item save and quit
+\end{enumerate}
+
+Secondly in the file pg\_hba.conf a line needs to be added to allow other users in Linux to access postgres.
+
+\subsubsection{PostGIS Configuration in PostgreSQL}
+
+\subsubsection{Serverside Stairwalker Extension in PostgreSQL}
