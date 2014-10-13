@@ -45,9 +45,15 @@ Appart from creating a new Pre-Aggregation
 \end{enumerate}
 
 \subsubsection{Current Status Support of Aggregation Types}
+At the moment you can aggregate your data in a total of 4 options and all 4 options have a different outcome.
+
+The options that you can use at the moment are the following:
 \begin{enumerate}
-	\item MIN
-	\item MAX
-	\item COUNT
-	\item SUM
+	
+\item Count: returns the total amount of data in an aggregate box. Returns a number with the total amount of that tile.
+\item Sum: returns the total value of all data added up to eachother. For instance when you do a sum on the tweet length you'll get the total amount of characters tweeted in a tile.
+\item Min: returns the lowest value of all data that is aggregated. With the example of tweet length, it will returns the value of the lowest length tweet in that tile.
+\item Max: returns the highest value of all data that is aggregated. With the example of tweet length, it will returns the value of the highest length tweet in that tile.
 \end{enumerate}
+
+It is important to chose the right type in order to get a good representation of your data. If you want to show the total amount in a tile, you should chose count as this will returns the total number of tweets in a tile. Whereas if you want only the highest value of your data (for example the highest building in an area) then it is important to use max. It is also possible to add other datatypes than the onces mentioned here. To do so check the section about development, here you will find more information about how to add a different aggregation type.
