@@ -1,9 +1,15 @@
-In order to add a source to Geoserver you first need to be logged into the Geoserver webapplication. http://localhost:8080/geoserver/web is the link to the webapplication of Geoserver. The standard login and password for this are:
+In order to add a source to Geoserver you first need to be logged into the Geoserver webapplication. \url{http://localhost:8080/geoserver/web} is the link to the webapplication of Geoserver. The standard login and password for this are:
 \newline
 \newline
 Username: admin
-
 \noindent Password: geoserver
 \newline
 \newline
-Once you're logged in we can start by adding the source of our database. On the left side you should see a menu with all kinds of options, but in order to add a source, you go to Configuration $\rightarrow$ Sources. In the top you should see an add source button. Now under vectortypes you should be able to select what kind of source you want to add. In here there should be a NeoGeo Aggregate - NeoGeo aggregation index query. If this is not the case something went wrong with deploying the geoserver and you should redo the last steps in this readme. If it is here, click on it and a new menu will open. Here you need to fill in all information for your source. Here you can also select what type you're using (count/sum/minimum/maximum). Once you filled in all information correctly you should have adding your source and this should now be viewable in your sources.
+Once the webapplication has logged in, then start by adding the source of the database. 
+\begin{enumerate}
+	\item On the left side there should be a menu with all kinds of options, but in order to add a source, go to Configuration $\rightarrow$ Sources. 
+	\item At the top there should be an add source button. 
+	\item Now under vectortypes there should be a list of types. Select what kind of source you want to add. In order to get the Stairwalker program running there should be a NeoGeo Aggregate - NeoGeo aggregation index query. If this is not the case something went wrong with deploying the geoserver and the last steps in this manual should be done again. 
+	\item If it is here, click on it and a new menu will open. A new screen should open where all information for your source has to be filled in. There is also an option on what aggregation type the program should use, this should have been defined before so use what has been used before (count/sum/minimum/maximum). 
+	\item Once everything is filled in all, the source should have been added to the Geoserver. This can be checked by going to sources again and then it should display the source that has just been added.
+\end{enumerate}
