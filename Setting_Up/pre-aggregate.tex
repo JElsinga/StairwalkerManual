@@ -13,12 +13,41 @@ To do the Pre-Aggregation step a tool has been develped which is explained here.
 mvn package appassembler:assemble
 \end{lstlisting}
 After successful completion of this command a new directory \lstinline$appassembler$ will have been created in the \lstinline$target$ directory containing a \lstinline$repo$ and a \lstinline$bin$ directory. The \lstinline$bin$ directory contains the actual binaries of the tool (in both Linux/Unix and Windows version) and the \lstinline$repo$ directory contains the tool dependencies. The tool should now be ready for use.
+
+The tool is used to create a PreAggregate index for a table with $\textit{n}$ dimensions and a measure/aggregate column. It uses with the following commands:
+\begin{lstlisting}[basicstyle=\small]
+usage: create-pa-index
+ -axistosplit <axis index>    &index of axis to split&
+ -chunksize <size>            maximum chunk size after split
+ -config <file>               PreAggregate XML config file
+ -d,--database <dbname>       name of database
+ -dbtype <postgresql|monetdb> type of database
+ -h,--host <host>             database host name or ip address
+ -help                        prints this help message
+ -p,--port <port>             port number of the database
+ -password <password>         database password
+ -s,--schema <schema>         schema name in the database
+ -u,--user <user>             database username
+ -v,--verbose                 Enable verbose output logging
+\end{lstlisting}
+The tool is dependent on the \lstinline$PreAggregate.XML$ config file which is used to define the PreAggregate index by specifying the column to aggregate, the type of aggregate that should done and the dimensions to include. In the \lstinline$neogeo/pre-aggregate-tools/$ directory a sample configuration file is included.
+
+\todo[inline, size=\small]{How does this tool work nominal axis? More preprocessing may be required when first parsing words? Example london\_words or gender\_words}
+
+see~\Fref{sec:PreAggregateDev} for more detail about preaggregation not using the special help tool.
+
+Appart from creating a new Pre-Aggregation 
 \subsubsection{Current Status Support of Datatypes}
-
-\subsubsection{Current Status Support of Aggregation Types}
-
 \begin{enumerate}
 	\item Aggregate Axis
 	\item Metric Axis
 	\item Nominal Axis
+\end{enumerate}
+
+\subsubsection{Current Status Support of Aggregation Types}
+\begin{enumerate}
+	\item MIN
+	\item MAX
+	\item COUNT
+	\item SUM
 \end{enumerate}

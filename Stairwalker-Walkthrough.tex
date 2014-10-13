@@ -5,6 +5,7 @@
 \usepackage{todonotes}
 \usepackage{listings}
 \usepackage{color}
+\usepackage[plain]{fancyref}
 %\usepackage{marginnote}
 %REMOVE BELOW COMMAND TO GET NORMAL VIEW
 %\usepackage[top=1.5cm, bottom=1.5cm, outer=5cm, inner=2cm, heightrounded, marginparwidth=2.5cm, marginparsep=2cm]{geometry}
@@ -15,12 +16,13 @@
 		backgroundcolor=\color{light-gray}
 		}
 \lstset{numbers=right, 
-                numberstyle=\tiny, 
+                numberstyle=\tiny,
+                escapechar=\&,
                 breaklines=true,
                 backgroundcolor=\color{light-gray},
-                xleftmargin=\parindent,
+                %xleftmargin=\parindent,
                 %xleftmargin=1cm,
-                xrightmargin=\parindent,
+                %xrightmargin=\parindent,
                 numbersep=5pt}
 
 \newcommand*{\UTlogo}{\fbox{$\mathcal{UT}$}}
