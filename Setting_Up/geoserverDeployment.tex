@@ -1,1 +1,25 @@
-\textbf{Information about how to setup and deploy the geoserver .war file in tomcat.}
+\subsubsection{Obtaining GeoServer and Aggregate Extension}
+The GeoServer\footnote{GeoServer: \url{http://www.geoserver.org}} is used to visually display the aggregated data. To use the aggregated dataset an extension has be written for GeoServer which needs to be included in the web application. This is done by including the JAR files of the extension in the WEB-INF of the GeoServer WAR file. A step by step guild is given below in \Fref{sec:InstallExtension}. However before following these instructions the necessary JAR and WAR files will need to be obtained.
+
+The GeoServer WAR file can be downloaded from the \href{http://www.geoserver.org/download/}{GeoServer website}. The custom Java extension files should be built using the source code. The extension consists of the \lstinline|pre-aggregate| and \lstinline|geoserver-ext| projects in the \lstinline|neogeo| project. Note that first the JAR file of \lstinline|pre-aggregate| should be created as it is a dependency of \lstinline|geoserver-ext|. The JARs can be built using the command line or in a IDE such as Eclipse or Netbeans, using the \lstinline|clean and build| command on a project in Netbeans should build \lstinline|<project-name>-0.0.1-SNAPSHOT.jar| which can be found in the \lstinline|target| directory of the project.
+
+\subsubsection{Installing Extension}
+\label{sec:InstallExtension}
+\noindent These next instructions assume the geoserver extention files are located in the directory \lstinline|/data/upload/| and that the \lstinline|geoserver.war| file is located in the directory \mbox{\lstinline|/data/tmp/tmp_war|}. If this is not the case the file paths in the instructions below should be changed accordingly. \newline
+
+\noindent Unpack the WAR file
+\begin{enumerate}
+	\item \lstinline|jar -xvf geoserver.war|
+\end{enumerate}
+Copy the JAR files of the extension into \lstinline|WEB-INF/lib| directory of the GeoServer unpacked WAR file
+\begin{enumerate}[resume]
+	\item \lstinline|cp /data/upload/pre-aggregate-0.0.1-SNAPSHOT.jar /data/tmp/tmp_war/WEB-INF/lib|
+	\item \lstinline|cp /data/upload/geoserver-ext-0.0.1-SNAPSHOT.jar /data/tmp/tmp_war/WEB-INF/lib|
+\end{enumerate}
+Recreate the GeoServer WAR file
+\begin{enumerate}[resume]
+	\item \lstinline|jar -cvf geoserver.war META-INF/ WEB-INF/ index.html data/|
+\end{enumerate}
+The GeoServer WAR with the stairwalker extension should now be ready for deployment.
+
+\subsubsection{Deploying GeoServer}

@@ -8,11 +8,11 @@ Concretely take the dataset of tweets sent within the netherlands. A pre-aggrega
 \subsubsection{PreAggregate Tool}
 To do the Pre-Aggregation step a tool has been develped which is explained here.
 
-\noindent The tool can be found in the directory \lstinline$neogeo/pre-aggregate-tools/$. To generate the binary tools from source the Appassembler plugin of Maven is used. Run the following command to generate the tool.
+\noindent The tool can be found in the directory \lstinline|neogeo/pre-aggregate-tools/|. To generate the binary tools from source the Appassembler plugin of Maven is used. Run the following command to generate the tool.
 \begin{lstlisting}
 mvn package appassembler:assemble
 \end{lstlisting}
-After successful completion of this command a new directory \lstinline$appassembler$ will have been created in the \lstinline$target$ directory containing a \lstinline$repo$ and a \lstinline$bin$ directory. The \lstinline$bin$ directory contains the actual binaries of the tool (in both Linux/Unix and Windows version) and the \lstinline$repo$ directory contains the tool dependencies. The tool should now be ready for use.
+After successful completion of this command a new directory \lstinline|appassembler| will have been created in the \lstinline|target| directory containing a \lstinline|repo| and a \lstinline|bin| directory. The \lstinline|bin| directory contains the actual binaries of the tool (in both Linux/Unix and Windows version) and the \lstinline|repo| directory contains the tool dependencies. The tool should now be ready for use.
 
 The tool is used to create a PreAggregate index for a table with $\textit{n}$ dimensions and a measure/aggregate column. It uses with the following commands:
 \begin{lstlisting}[basicstyle=\small]
@@ -30,13 +30,13 @@ usage: create-pa-index
  -u,--user <user>             database username
  -v,--verbose                 Enable verbose output logging
 \end{lstlisting}
-The tool is dependent on the \lstinline$PreAggregate.XML$ config file which is used to define the PreAggregate index by specifying the column to aggregate, the type of aggregate that should done and the dimensions to include. In the \lstinline$neogeo/pre-aggregate-tools/$ directory a sample configuration file is included.
+The tool is dependent on the \lstinline|PreAggregate.XML| config file which is used to define the PreAggregate index by specifying the column to aggregate, the type of aggregate that should done and the dimensions to include. In the \lstinline|neogeo/pre-aggregate-tools/| directory a sample configuration file is included.
 
 \todo[inline, size=\small]{How does this tool work nominal axis? More preprocessing may be required when first parsing words? Example london\_words or gender\_words}
 
 see~\Fref{sec:PreAggregateDev} for more detail about preaggregation not using the special help tool.
 
-Apart from creating a new PreAggregate table \lstinline$<original-table-name>_pa$ pre-aggregation also creates/updates two other tables, these are \lstinline$pre_aggregate$ and \lstinline$pre_aggregate_axis$. These two tables are support tables for the aggregation. They contain information about which tables have been aggregated and which axis have been used in pre-aggregation.
+Apart from creating a new PreAggregate table \lstinline|<original-table-name>_pa| pre-aggregation also creates/updates two other tables, these are \lstinline|pre_aggregate| and \lstinline|pre_aggregate_axis|. These two tables are support tables for the aggregation. They contain information about which tables have been aggregated and which axis have been used in pre-aggregation.
 \subsubsection{Current Status Support of Datatypes}
 \begin{enumerate}
 	\item Aggregate Axis
