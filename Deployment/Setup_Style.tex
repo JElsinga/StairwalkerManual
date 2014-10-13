@@ -1,0 +1,12 @@
+The next step is to make a style in which you want your data to be shown. A style has to be made in SLD/XML, there are a lot of options which can be used to make a style. First navigate to the style tab, Configuration -> Style here you can add a new style with the button on top. Here you need to add your code (or file) for your style.
+\newline
+\newline http://docs.geoserver.org/2.5.x/en/user/styling/sld-cookbook/index.html contains a lot of information regarding styles, it is a lot of trial and error t oget a nice working style. The next few steps however should give a short setup on how to start making your own style.
+\begin{enumerate}
+	\item Decide what data you want to be shown, in our example we’re using the count of the aggregated data.
+	\item Decide what kind of representation you want, you can either use Polygonsymbolizer, pointsymbolizer or linesymbolizer.
+	\item Add all filters you want, for instance if you want the data to show a lighter color if the amount is lower. Or make a tile red once the data exceed a certain maximum (for instance if there were too many orders in a timerange).
+	\item Add colors to the layers representing it better and giving it a nice layout.
+	\item Make sure the positioning of the label and all filters are working.
+	\item Finish the layer by adding the last details (Halo behind the text for example).
+\end{enumerate}
+	If you want more information and more insight in the different function as how we used them, you should look at the development chapter.
