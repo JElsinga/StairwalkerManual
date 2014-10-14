@@ -56,6 +56,7 @@ Once PostGIS is installed some extra configuration is required. This needs to be
 \end{enumerate}
 
 \subsubsection{Serverside Stairwalker Extension in PostgreSQL}
+\label{sec:serversideextension}
 Finally there is C extension which allows processing of the SQL queries for the pre-aggregated database to happen on the server side instead of in the GeoServer application. This extension has to be installed on the Postgres database. The extension can be found in the directory \lstinline|neogeo/pre-aggregate/src/db-extensions/postgres/pa_grid|.
 
 The extension can be installed on Linux using the following commands.

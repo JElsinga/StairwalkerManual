@@ -6,6 +6,7 @@ Stairwalker makes use of the Pre-Aggregate functions. These functions create a g
 Concretely take the dataset of tweets sent within the netherlands. A pre-aggregation of this data could be in the following form. As significant data we consider the number of tweets in the x- and y-coordinate dimensions. We then set a highest granularity (zoom). The pre-aggregate algorithm then creates blocks bounded by the x- and y-coordinates at the highest granularity and for all those blocks calculates the number of tweets within those coordinates. Then each subsequent layer is built up from the previous layer. The final result is a new dataset which contains all blocks with the number of tweets in a coordinate block at each level of granularity.
 
 \subsubsection{PreAggregate Tool}
+\label{sec:preaggtool}
 To do the Pre-Aggregation step a tool has been develped which is explained here.
 
 \noindent The tool can be found in the directory \lstinline|neogeo/pre-aggregate-tools/|. To generate the binary tools from source the Appassembler plugin of Maven is used. Run the following command to generate the tool.
