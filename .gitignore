@@ -83,6 +83,9 @@ desktop.ini
 # xindy
 *.xdy
 
+# thumbnails
+*.db
+
 # Individual files
 Stairwalker-Walkthrough.pdf
 
