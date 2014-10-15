@@ -37,6 +37,8 @@ J-	X				2.4.3. Deploying geoserver
 
 Vragen:
 	1. Hoe verwijzen wij naar de code? Via GitHub?
+	2. Hoe noemen wij het bestand? Guide, Manual, ReadMe?
+	3. Hoe noemen wij het geheel (program)? Stairwalker, NeoGeo?
 			
 	2. Verschil:
 		Pre-aggregate
