@@ -40,5 +40,6 @@ Once logged in to the web administration interface it is possible to add a new d
 	\todo[inline, size=\small]{Are the xSize, ySize, timeSize dimensions not already set in the source? What happens when timeSize $< 1$?}
 	\item \textbf{count, sum, minimum, maximum} - Select the boxes of the aggregates which will be used in the visualization. Note that these basic aggregates more aggregates such as mean can can be derived.
 	\item \textbf{Enable server-side Stairwalker} - Selecting will cause the data source to rely on the use of the database plugins to use the Pre-Aggregate index. For performance reasons it is high recommended to use this option. See \Fref{sec:serversideextension} for more details.
+	\todo[inline, size=\small]{The Enable server-side Stairwalker ooption is no longer avaible? Remove?}
 	\item \textbf{Enable query logging} - Selecting will turn on the logging of all Pre-Aggregate queries into a separate table called \lstinline|pre_aggregate_logging|.
 \end{itemize}
