@@ -63,7 +63,7 @@ This example will test if the testvalue is less than 2000000. If this is the cas
 
 What this example does is that if the testvalue is below 100, it will fill a polygon with the color: \#38FF19. If this is not the case it will go to the next rule (if there is any otherwise it will just not do anything). The image shows a graph of the implementation we made for our data. The image has different kind of colors for the amount of data in a tile. If the amount is high the color will become more red and if there is little data the tile will be green. This is a good example on what can be done with filters.
 
-\subsection{Extra options}
+\subsubsection{Extra options}
 
 GeoGerver SLD has a lot of options when it comes to customizing the data display that you've made. Below are some of the important features that are commonly used in 
 
@@ -74,19 +74,21 @@ Halo: A halo gives a glow behind the current label. It should always be used in 
 Anchorpoint: An Anchorpoint is a really handy tool to place your label on every place possible. It is used as shown below and important to notice is that you can set where the Anchorpoint is (for example above the point) and you can displace it afterwards based on this anchorpoint, for instance make it go all the way to left (negative X placement) or all the way to the right (positive x placement)
 \begin{lstlisting}
 <PointPlacement>
-<AnchorPoint>
-<AnchorPointX>0.5</AnchorPointX>
-<AnchorPointY>0.0</AnchorPointY>
-</AnchorPoint>
-<Displacement>
-<DisplacementX>0</DisplacementX>
-<DisplacementY>25</DisplacementY>
-</Displacement>
-<Rotation>-45</Rotation>
+  <AnchorPoint>
+    <AnchorPointX>0.5</AnchorPointX>
+    <AnchorPointY>0.0</AnchorPointY>
+  </AnchorPoint>
+  <Displacement>
+    <DisplacementX>0</DisplacementX>
+    <DisplacementY>25</DisplacementY>
+  </Displacement>
+  <Rotation>-45</Rotation>
 </PointPlacement>
 \end{lstlisting}
 Opacity: Opacity is the transparancy of either a label, point, polygon or line. It can be used to paint layers over each other (setting Opacity to 0), this is something used a lot incase multiple data has to be displayed in the same tile (used in our example as well). The way you use it is the following:
 
 \lstinline|<Opacity>0.3</Opacity>|
+
+Rotation: Rotation is the fuction that is used to turn all shapes and labels in SLD. It is very handy if you want to turn tiles or make labels line up with lines better. The way to use it is very simple in the section that has to be rotated just add the following code: \lstinline|<Rotation>-45</Rotation>| for a negative 45 degree turn.
 
 
