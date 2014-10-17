@@ -91,4 +91,26 @@ Opacity: Opacity is the transparancy of either a label, point, polygon or line. 
 
 Rotation: Rotation is the fuction that is used to turn all shapes and labels in SLD. It is very handy if you want to turn tiles or make labels line up with lines better. The way to use it is very simple in the section that has to be rotated just add the following code: \lstinline|<Rotation>-45</Rotation>| for a negative 45 degree turn.
 
-
+Graphic Fill: A graphic fill is used incase a picture/image has to be shown in a layer. It has a lot of possibilities since every picture/image can be added through this way. The implemention is a little more complex so below is an example of a graphic fill. 
+\begin{lstlisting}
+<FeatureTypeStyle>
+  <Rule>
+    <PolygonSymbolizer>
+      <Fill>
+        <GraphicFill>
+          <Graphic>
+	        <ExternalGraphic>
+			  <OnlineResource
+				xlink:type="simple"
+				xlink:href="colorblocks.png" />
+				<Format>image/png</Format>
+			</ExternalGraphic>
+		    <Size>93</Size>
+		  </Graphic>
+		</GraphicFill>
+	  </Fill>
+	</PolygonSymbolizer>
+  </Rule>
+</FeatureTypeStyle>
+\end{lstlisting}
+  
