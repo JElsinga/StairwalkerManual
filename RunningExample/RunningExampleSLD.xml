@@ -59,7 +59,7 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
           <ogc:Filter>
             <ogc:PropertyIsLessThan>
               <ogc:PropertyName>countaggr</ogc:PropertyName>
-              <ogc:Literal>1</ogc:Literal>
+              <ogc:Literal>2</ogc:Literal>
             </ogc:PropertyIsLessThan>
           </ogc:Filter>
           <PolygonSymbolizer>
@@ -136,7 +136,7 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
           </ogc:Filter>
           <PolygonSymbolizer>
             <Fill>
-              <CssParameter name="fill">#38ff19</CssParameter>
+              <CssParameter name="fill">#FFFF00</CssParameter>
               <CssParameter name="fill-opacity">1.0</CssParameter>
             </Fill>
             <Stroke>
