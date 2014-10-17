@@ -15,12 +15,12 @@ A polygonsymbolizer is used when the data that you want to represent has to be d
 Filters are the most important function when it comes to making a custom style. A filter is basicly the basis of a fancy layer. What a filter does is that it makes a ruling and if that ruling is met, the color, labeling etc will be done. In SLD it is possible to have an unlimited amount of filters so the possibilities are endless. The following filter expression can be used:
 
 \begin{itemize}
-	\item $<$PropertyIsEqualTo$>$
-	\item $<$PropertyIsNotEqualTo$>$
-	\item $<$PropertyIsLessThan$>$
-	\item $<$PropertyIsLessThanOrEqualTo$>$
-	\item $<$PropertyIsGreaterThan$>$
-	\item $<$PropertyIsGreaterThanOrEqualTo$>$
+	\item \lstinline|$<$PropertyIsEqualTo$>$|
+	\item \lstinline|$<$PropertyIsNotEqualTo$>$|
+	\item \lstinline|$<$PropertyIsLessThan$>$|
+	\item \lstinline|$<$PropertyIsLessThanOrEqualTo$>$|
+	\item \lstinline|$<$PropertyIsGreaterThan$>$|
+	\item \lstinline|$<$PropertyIsGreaterThanOrEqualTo$>$|
 \end{itemize}
 
 An example on how a single filter can be used is the following:
@@ -65,13 +65,11 @@ What this example does is that if the testvalue is below 100, it will fill a pol
 
 \subsubsection{Extra options}
 
-GeoGerver SLD has a lot of options when it comes to customizing the data display that you've made. Below are some of the important features that are commonly used in 
+GeoGerver SLD has a lot of options when it comes to customizing the data display that you've made. Below are some of the important features that are commonly used in Geoserver.
 
-Geoserver.
-
-Halo: A halo gives a glow behind the current label. It should always be used in a textsymbolizer, since this is the only place you can add a halo. To use a halo its very simple, you do \lstinline|<Halo> </Halo>| and in between it is possible to add \lstinline|<Radius>| and \lstinline|<Fill>|. For more information on how to use a \lstinline|<Fill>| look in the GeoServer SLD cookbook.
+\textbf{Halo:} A halo gives a glow behind the current label. It should always be used in a textsymbolizer, since this is the only place you can add a halo. To use a halo its very simple, you do \lstinline|<Halo> </Halo>| and in between it is possible to add \lstinline|<Radius>| and \lstinline|<Fill>|. For more information on how to use a \lstinline|<Fill>| look in the GeoServer SLD cookbook.
 \newline
-Anchorpoint: An Anchorpoint is a really handy tool to place your label on every place possible. It is used as shown below and important to notice is that you can set where the Anchorpoint is (for example above the point) and you can displace it afterwards based on this anchorpoint, for instance make it go all the way to left (negative X placement) or all the way to the right (positive x placement)
+\textbf{Anchorpoint:} An Anchorpoint is a really handy tool to place your label on every place possible. It is used as shown below and important to notice is that you can set where the Anchorpoint is (for example above the point) and you can displace it afterwards based on this anchorpoint, for instance make it go all the way to left (negative X placement) or all the way to the right (positive X placement)
 \begin{lstlisting}
 <PointPlacement>
   <AnchorPoint>
@@ -85,13 +83,13 @@ Anchorpoint: An Anchorpoint is a really handy tool to place your label on every 
   <Rotation>-45</Rotation>
 </PointPlacement>
 \end{lstlisting}
-Opacity: Opacity is the transparancy of either a label, point, polygon or line. It can be used to paint layers over each other (setting Opacity to 0), this is something used a lot incase multiple data has to be displayed in the same tile (used in our example as well). The way you use it is the following:
+\textbf{Opacity:} Opacity is the transparancy of either a label, point, polygon or line. It can be used to paint layers over each other (setting Opacity to 0), this is something used a lot incase multiple data has to be displayed in the same tile (used in our example as well). The way you use it is the following:
+\begin{lstlisting}
+<Opacity>0.3</Opacity>
+\end{lstlisting}
+\textbf{Rotation:} Rotation is the fuction that is used to turn all shapes and labels in SLD. It is very handy if you want to turn tiles or make labels line up with lines better. The way to use it is very simple in the section that has to be rotated just add the following code: \lstinline|<Rotation>-45</Rotation>| for a negative 45 degree turn.
 
-\lstinline|<Opacity>0.3</Opacity>|
-
-Rotation: Rotation is the fuction that is used to turn all shapes and labels in SLD. It is very handy if you want to turn tiles or make labels line up with lines better. The way to use it is very simple in the section that has to be rotated just add the following code: \lstinline|<Rotation>-45</Rotation>| for a negative 45 degree turn.
-
-Graphic Fill: A graphic fill is used incase a picture/image has to be shown in a layer. It has a lot of possibilities since every picture/image can be added through this way. The implemention is a little more complex so below is an example of a graphic fill. 
+\textbf{Graphic Fill:} A graphic fill is used incase a picture/image has to be shown in a layer. It has a lot of possibilities since every picture/image can be added through this way. The implemention is a little more complex so below is an example of a graphic fill. 
 \begin{lstlisting}
 <FeatureTypeStyle>
   <Rule>
@@ -99,17 +97,17 @@ Graphic Fill: A graphic fill is used incase a picture/image has to be shown in a
       <Fill>
         <GraphicFill>
           <Graphic>
-	        <ExternalGraphic>
-			  <OnlineResource
-				xlink:type="simple"
-				xlink:href="colorblocks.png" />
-				<Format>image/png</Format>
-			</ExternalGraphic>
-		    <Size>93</Size>
-		  </Graphic>
-		</GraphicFill>
-	  </Fill>
-	</PolygonSymbolizer>
+            <ExternalGraphic>
+              <OnlineResource
+              xlink:type="simple"
+              xlink:href="colorblocks.png" />
+              <Format>image/png</Format>
+            </ExternalGraphic>
+            <Size>93</Size>
+          </Graphic>
+        </GraphicFill>
+      </Fill>
+    </PolygonSymbolizer>
   </Rule>
 </FeatureTypeStyle>
 \end{lstlisting}
