@@ -36,10 +36,21 @@ J-	X				2.4.3. Deploying geoserver
 				4.4. Client Side Developement	(??)
 			5. Conclusion
 
+TODO 17-10-14
+	- Fix up section 3.4 (Jochem)
+	- Finish section 4.3 (Dennis)
+	- Running Example (create section 5)
+	- References
+	- Spell checker
+	- Fix up some other details...
+
+Column	;
+Quote	"
+	
 Vragen:
-	1. Hoe verwijzen wij naar de code? Via GitHub?
-	2. Hoe noemen wij het bestand? Guide, Manual, ReadMe?
-	3. Hoe noemen wij het geheel (program)? Stairwalker, NeoGeo?
+	1. Hoe verwijzen wij naar de code? Via GitHub?						A: GitHub
+	2. Hoe noemen wij het bestand? Guide, Manual, ReadMe?				A: Manual
+	3. Hoe noemen wij het geheel (program)? Stairwalker, NeoGeo?		A: Stairwalker
 			
 	2. Verschil:
 		Pre-aggregate

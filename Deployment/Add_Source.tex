@@ -37,7 +37,7 @@ Once logged in to the web administration interface it is possible to add a new d
 	\item \textbf{Username} - Username of the used database.
 	\item \textbf{Password} - Password of the used database.
 	\item \textbf{xSize, ySize, timeSize} - Specifies the dimensions of the grid which is created for every view of the map to calculate the aggregates per cell. The higher the number of cells the more detailed the information. \\
-	\todo[inline, size=\small]{Are the xSize, ySize, timeSize dimensions not already set in the source? What happens when timeSize $< 1$?}
+	\todo[inline, size=\small]{Are the xSize, ySize, timeSize dimensions not already set in the source? What happens when timeSize $> 1$?}
 	\item \textbf{count, sum, minimum, maximum} - Select the boxes of the aggregates which will be used in the visualization. Note that these basic aggregates more aggregates such as mean can can be derived.
 	\item \textbf{Enable server-side Stairwalker} - Selecting will cause the data source to rely on the use of the database plugins to use the Pre-Aggregate index. For performance reasons it is high recommended to use this option. See \Fref{sec:serversideextension} for more details.
 	\todo[inline, size=\small]{The Enable server-side Stairwalker ooption is no longer avaible? Remove?}

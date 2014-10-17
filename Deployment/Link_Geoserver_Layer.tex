@@ -1,1 +1,12 @@
-Now in order to see the layer go to view, here it should display the layer that has been made (with the added name) with a dropdown menu. Select PNG/JPEG or something similar to show a basecase of the data. A new window should open and here it should show your data in a weird graph. If this is not the case, its likely a mistake in the style. It is also possible to adjust your view in the images by adding a VIEWPARAM to the url. To do so just add: \&VIEWPARAMS=$<$Type$>$:$<$Value$>$ to the url and the image should change.
+%Now in order to see the layer go to view, here it should display the layer that has been made (with the added name) with a drop-down menu. Select PNG/JPEG or something similar to show a basecase of the data. A new window should open and here it should show your data in a weird graph. If this is not the case, its likely a mistake in the style. It is also possible to adjust your view in the images by adding a VIEWPARAM to the url. To do so just add: \&VIEWPARAMS=$<$Type$>$:$<$Value$>$ to the url and the image should change.
+
+\todo[inline, size=\small]{This section shows how to view a newly created layer. A bit is said about extending the URL with \&VIEWPARAMS to filter nominal axises. It also explains how a layer was used in the development/demo in a webpage. References to Client Side Development from section 4.}
+
+\begin{enumerate}
+	\item Navigate to \lstinline|Layer Preview| by clicking \lstinline|Layer Preview| link under the \lstinline|Data| section in the navigator on the left hand side of the web administration interface homepage.
+	\item The \lstinline|Layer Preview| page will have a list of all configured layers with can be previewed in various formats.
+	\item Locate the layer which should be shown and from the \lstinline|All Formats| column choice any \lstinline|WMS| format.
+	\item After selecting a format to view the layer a new page will open with a visual representation of the top most layer of dataset.
+\end{enumerate}
+
+\todo[inline, size=\small]{Errors is viewing the layer in GeoServer could be because, code error (fault in axis) or a style issue}
