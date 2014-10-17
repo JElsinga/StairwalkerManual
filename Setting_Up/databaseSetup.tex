@@ -1,9 +1,9 @@
-At the moment the stairwalker program only works with the PostgreSQL\footnote{PostgreSQL: \url{http://www.postgresql.org}} and MonetDB\footnote{MonteDB: \url{http://www.monetdb.org}} database management systems. This manual will only concern itself with PostgreSQL (shortened to Postgres). Any further reference to a database implies a Postgres database.
+At the moment the Stairwalker program only works with the PostgreSQL\footnote{PostgreSQL: \url{http://www.postgresql.org}} and MonetDB\footnote{MonteDB: \url{http://www.monetdb.org}} database management systems. This manual will only concern itself with PostgreSQL (shortened to Postgres). Any further reference to a database implies a Postgres database.
 
-In this section a walk through explaining the steps needed to setup PostgreSQL along with PostGIS\footnote{PostGIS: \url{http://www.postgis.net}} and a custom made database extension for stairwalker on an Ubuntu Linux kernel.
+In this section a walk through explaining the steps needed to setup PostgreSQL along with PostGIS\footnote{PostGIS: \url{http://www.postgis.net}} and a custom made database extension for Stairwalker on an Ubuntu Linux kernel.
 
 \subsubsection{PostgreSQL Database Manager Setup}
-Installing Postgres on Linux should be straight forward. In the terminal search for postgresql and then choose which version of postgresql should be installed. Below the commands used to search and install version 9.1 of Postgres are shown.
+Installing Postgres on Linux should be straight forward. In the terminal search for Postgresql and then choose which version of Postgresql should be installed. Below the commands used to search and install version 9.1 of Postgres are shown.
 \begin{enumerate}
 	\item \lstinline|aptitude search postgresql|
 	\item \lstinline|apt-get install postgresql-9.1|
@@ -13,7 +13,7 @@ For further information or if there are difficulties with the installation more 
 \subsubsection{PostgreSQL Configuration}
 Once Postgres is installed on Linux two alterations will need to be made to the configuration files so that the database can be accessed from outside and by other users.
 
-First off in the \lstinline|postgresql.conf| file the listen\_addresses need to be changed from localhost to all. This can be done as follows (assuming version 9.1 of postgres).
+First off in the \lstinline|Postgresql.conf| file the listen\_addresses need to be changed from localhost to all. This can be done as follows (assuming version 9.1 of Postgres).
 
 \begin{enumerate}
 	\item \lstinline|cd /etc/postgresql/9.1/main|
@@ -31,7 +31,7 @@ First off in the \lstinline|postgresql.conf| file the listen\_addresses need to 
 	\item \lstinline|/etc/init.d/postgresql restart|
 \end{enumerate}
 
-\noindent It should now be possible to create a database user and database in postgres. More information about how this is done can be found on the \href{http://www.postgresql.org/docs/manuals/}{Postgres manuals webpage}.
+\noindent It should now be possible to create a database user and database in Postgres. More information about how this is done can be found on the \href{http://www.postgresql.org/docs/manuals/}{Postgres manuals webpage}.
 
 \subsubsection{PostGIS Configuration in PostgreSQL}
 The next step is to extend Postgres with PostGIS database expansion. This again should be straight forward, first search for PostGIS and then choice the version that goes with Postgres to install. Note in order to do the install root privileges are required. Below the commands to search and install PostGIS for Postgres-9.1 are shown.
