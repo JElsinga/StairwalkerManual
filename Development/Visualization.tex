@@ -1,4 +1,4 @@
-This section is going to discuss most of the possibilities that Geoserver has to offer when it comes to the visualization of the data. The GeoServer manual has some information on this subject, which can be found on: \url{http://docs.geoserver.org/2.5.x/en/user/styling/sld-reference/index.html}.
+This section is going to discuss most of the possibilities that GeoServer has to offer when it comes to the visualization of the data. The GeoServer manual has some information on this subject, which can be found on: \url{http://docs.geoserver.org/2.5.x/en/user/styling/sld-reference/index.html}.
 
 The following sections will give some more information on what the differences are between the different options and some ways to implement the different options. This section will use some of the examples used in our demo to give some more insight what can be done and hopefully making it easier to realise what is wanted. Most information can be found on the website, below will be a discussion on what types are best used when, but also some more information on how to make them work properly.
 
@@ -27,11 +27,11 @@ An example on how a single filter can be used is the following:
 <ogc:Filter>
   <ogc:PropertyIsLessThan>
     <ogc:PropertyName>testvalue</ogc:PropertyName>
-    <ogc:Literal>2000000</ogc:Literal>
+    <ogc:Literal>200</ogc:Literal>
   </ogc:PropertyIsLessThan>
 </ogc:Filter>
 \end{lstlisting}
-This example will test if the \lstinline|testvalue| is less than \lstinline|2000000|. If this is the case you can add what the filter should be doing. Below is the complete example that does something with this filters.
+This example will test if the \lstinline|testvalue| is less than \lstinline|200|. If this is the case you can add what the filter should be doing. Below is the complete example that does something with this filters.
 \begin{lstlisting}
 <Rule>
   <Name>SmallPop</Name>
@@ -63,7 +63,7 @@ What this example does is that if the \lstinline|testvalue| is below \lstinline|
 
 \subsubsection{Extra Options}
 
-GeoGerver SLD has a lot of options when it comes to customizing the data display that you've made. Below are some of the important features that are commonly used in Geoserver.
+GeoGerver SLD has a lot of options when it comes to customizing the data display that you've made. Below are some of the important features that are commonly used in GeoServer.
 
 \textbf{Halo:} A halo gives a glow behind the current label. It should always be used in a textsymbolizer, since this is the only place you can add a halo. To use a halo its very simple, you do \lstinline|<Halo> </Halo>| and in between it is possible to add \lstinline|<Radius>| and \lstinline|<Fill>|. For more information on how to use a \lstinline|<Fill>| look in the GeoServer SLD cookbook.
 
