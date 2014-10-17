@@ -1,6 +1,44 @@
+\todo[inline, size=\small]{Give an introduction to the example}
+
 \subsection{Requirements}
+Before recreating the given example all necessary installations should be made and the required files obtained. The following programs should be installed:
+\begin{enumerate}
+	\item PostgreSQL (\Fref{sec:postgresql})
+	\item PosgGIS for a PostgreSQL database (\Fref{sec:postgis})
+	\item Tomcat or another web service server (\Fref{sec:tomcat})
+	\item GeoServer with extension (\Fref{sec:geoserverinstall})
+\end{enumerate}
+Also the following files should be at the ready:
+\begin{enumerate}
+\end{enumerate}
 
 \subsection{Example Table Setup}
+\subsubsection{Recreating Dataset}
+\begin{lstlisting}
+CREATE TABLE runningexample (
+	id_str character varying(25),
+	tweet text,
+	user_name text,
+	place_name text,
+	time timestamp with time zone,
+	reply_to text,
+	place_id bigint,
+	len bigint,
+	coordinates geometry,
+	CONSTRAINT enforce_dims_coordinates CHECK ((st_ndims(coordinates) = 2)),
+	CONSTRAINT enforce_geotype_coordinates CHECK (((geometrytype(coordinates) = 'POINT'::text) OR (coordinates IS NULL))),
+	CONSTRAINT enforce_srid_coordinates CHECK ((st_srid(coordinates) = 4326))
+);
+\end{lstlisting}
+
+\subsubsection{Creating Pre-Aggregate Index}
+\begin{lstlisting}
+mvn package appassembler:assemble
+\end{lstlisting}
+
+\begin{lstlisting}
+target\appassembler\bin\create-pa-index -config runningexample.config.xml -d TestDatabase -dbtype postgresql -h localhost -p 5432 -password postgres123 -s public -u postgres
+\end{lstlisting}
 
 \subsection{GeoServer Setup}
 \input{Example/geoserver_setup}
