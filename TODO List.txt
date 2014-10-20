@@ -44,6 +44,14 @@ TODO 17-10-14
 	- Spell checker
 	- Fix up some other details...
 
+TODO 20-10-14
+	- Read through (spell + consistancy) check
+	- Reference section 5 in section 2 and 3
+	- Fix up intro peices in section 5
+	- Add text peices where necassary in section 3
+	- Write at least an outline about section 4.1
+	- Add some notes to section 4.2
+	
 Column	;
 Quote	"
 	

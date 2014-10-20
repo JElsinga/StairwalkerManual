@@ -50,11 +50,11 @@ Importing a style is done as follows:
 \begin{enumerate}[resume]
 	\item Click on the \lstinline|Styles| link in the \lstinline|Data| section shown in \Fref{fig:data}.
 	\item Click on the \lstinline|Add a new style| button which will go a page similar to \Fref{fig:styleimport} although empty.
-	\item Import the \lstinline|RunningExamplSLD.xml| file by using the \lstinline|Choose File| button then the \lstinline|Upload...| link highlighted in red in \Fref{fig:styleimport}.
+	\item Import the \lstinline|RunningExampleSLD.xml| file by using the \lstinline|Choose File| button then the \lstinline|Upload...| link highlighted in red in \Fref{fig:styleimport}.
 	\item Once the style has been upload the \lstinline|New style| page should look like \Fref{fig:styleimport}.
 	\item Press the \lstinline|Save| button.
 \end{enumerate}
-The style used in this example has now been imported in GeoServer and now the layer is ready to published.
+The style used in this example has been imported in GeoServer and now the layer is ready to published.
 \begin{figure}[h!]
 	\centering
 	\includegraphics[scale=0.5]{Figures/NewStyleImport.png}
@@ -79,7 +79,7 @@ The style used in this example has now been imported in GeoServer and now the la
 		\item This opens the \lstinline|Layers| page, here click on the \lstinline|Add a new resource| button. This open a page similar to \Fref{fig:publishlayer}.
 		\item Select the \lstinline|Publish| action for the example layer.
 		\item A page like \Fref{fig:editlayerdata} will open. Set highlighted fields to match \Fref{fig:editlayerdata}. More exact information about these fields can be found in \Fref{sec:addinglayers}.
-		\item After the fields in the \lstinline|Data| are filled in, go to the \lstinline|Publishing| tab which. See \Fref{fig:layerpublish}.
+		\item After the fields in the \lstinline|Data| are filled in, go to the \lstinline|Publishing| tab, see \Fref{fig:layerpublish}.
 		\item Set the  default style to \lstinline|RunningExampleSLD| like in \Fref{fig:layerpublish}.
 		\item Press the \lstinline|Save| button.
 	\end{enumerate}
@@ -111,11 +111,11 @@ The style used in this example has now been imported in GeoServer and now the la
 	\item Click on the \lstinline|Layer Preview| link in the \lstinline|Data| section shown in \Fref{fig:data}.
 	\item The \lstinline|Layer Preview| page opens which displays all viewable layers like in \Fref{fig:preview}.
 	\item A preview format need to be selected from the drop-down menu highlighted in \Fref{fig:preview}.
-	\item Select a \lstinline|WMS| format such as \lstinline|PNG|.
+	\item Select a \lstinline|WMS| preview format such as \lstinline|PNG|.
 	\item A new web page will load (this might a few seconds depending on if the server side extension is enabled).
 	\item The final result will look like \Fref{fig:result}.
 \end{enumerate}
-The layer which shows the example dataset is now complete. The values of each square in the layer is calculated using the pre-aggregate index of the dataset. See \ref{sec:clientsidedev} to learn how the layer can be used in combination with other tools such as OpenLayers\footnote{\url{http://openlayers.org/}} to a dynamic map which updates data on the fly.
+The layer which shows the example dataset is now complete. The values of each square in the layer is calculated using the pre-aggregate index of the dataset. See \ref{sec:clientsidedev} to learn how the layer can be used in combination with other tools such as OpenLayers\footnote{\url{http://openlayers.org/}} to create a dynamic map which updates data on the fly.
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.45\textwidth]{Figures/FinalResult.png}

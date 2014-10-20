@@ -1,6 +1,6 @@
-At the moment the Stairwalker program only works with the PostgreSQL\footnote{PostgreSQL: \url{http://www.postgresql.org}} and MonetDB\footnote{MonteDB: \url{http://www.monetdb.org}} database management systems. This manual will only concern itself with PostgreSQL (shortened to Postgres). Any further reference to a database implies a Postgres database.
+Currently the Stairwalker program only works with the PostgreSQL\footnote{PostgreSQL: \url{http://www.postgresql.org}} and MonetDB\footnote{MonteDB: \url{http://www.monetdb.org}} database management systems. This manual will only concern itself with PostgreSQL (often shortened to Postgres). Any further reference to a database implies a Postgres database.
 
-In this section a walk through explaining the steps needed to setup PostgreSQL along with PostGIS\footnote{PostGIS: \url{http://www.postgis.net}} and a custom made database extension for Stairwalker on an Ubuntu Linux kernel.
+In this section a walk through explaining the steps needed to setup PostgreSQL along with PostGIS\footnote{PostGIS: \url{http://www.postgis.net}} and a custom made database extension for Stairwalker on an Ubuntu Linux operating system.
 
 \subsubsection{PostgreSQL Database Manager Setup}
 
@@ -16,20 +16,20 @@ For further information or if there are difficulties with the installation more 
 \subsubsection{PostgreSQL Configuration}
 Once Postgres is installed on Linux two alterations will need to be made to the configuration files so that the database can be accessed from outside and by other users.
 
-First off in the \lstinline|Postgresql.conf| file the listen\_addresses need to be changed from localhost to all. This can be done as follows (assuming version 9.1 of Postgres).
+First off in the \lstinline|Postgresql.conf| file the \lstinline|listen\_addresses| need to be changed from \lstinline|localhost| to \lstinline|all|. Assuming version 9.1 of Postgres this can be done as follows.
 
 \begin{enumerate}
 	\item \lstinline|cd /etc/postgresql/9.1/main|
 	\item \lstinline|vi postgresql.conf|
-	\item \textit{change} listen\_addresses = `localhost' $\rightarrow$ listen\_addresses = `*'
+	\item \textit{change} \lstinline|listen_addresses = `localhost'| \textit{to} \lstinline|listen_addresses = `*'|
 	\item \textit{save and close}
 \end{enumerate}
 
-\noindent Secondly in the file \lstinline|pg_hba.conf| a line needs to be added to allow other users in Linux to access postgres. This can be done as follows:
+Secondly in the file \lstinline|pg_hba.conf| a line needs to be added to allow other users in Linux to access Postgres. This can be done as follows:
 
 \begin{enumerate}[resume]
 	\item \lstinline|vi pg_hba.conf|
-	\item \textit{Add} host all	all 0.0.0.0/0 password
+	\item \textit{Add} \lstinline|host all all 0.0.0.0/0 password|
 	\item \textit{save and close}
 	\item \lstinline|/etc/init.d/postgresql restart|
 \end{enumerate}
@@ -38,7 +38,7 @@ First off in the \lstinline|Postgresql.conf| file the listen\_addresses need to 
 
 \subsubsection{PostGIS Configuration in PostgreSQL}
 \label{sec:postgis}
-The next step is to extend Postgres with PostGIS database expansion. This again should be straight forward, first search for PostGIS and then choice the version that goes with Postgres to install. Note in order to do the install root privileges are required. Below the commands to search and install PostGIS for Postgres-9.1 are shown.
+The next step is to extend Postgres with PostGIS database expansion. This again should be straight forward, first search for PostGIS and then choose the version that goes with Postgres to install. Note in order to do the install root privileges are required. Below the commands to search and install PostGIS for Postgres-9.1 are shown.
 
 \begin{enumerate}
 	\item \lstinline|aptitude search postgis|
