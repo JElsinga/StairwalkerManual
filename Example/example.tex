@@ -1,4 +1,6 @@
-\todo[inline, size=\small]{Give an introduction to the example}
+In this section a concrete example is given to show how use Stairwalker. The example runs from creating a pre-aggregation index from a given dataset to geospacially representing the data using GeoServer. For the example a dataset is provide in terms of a .csv file. This is an exported database table which contains tweets sent in England.
+
+The result expected in this example can be seen in \Fref{fig:result}. Different colors represent a the number of tweets in a region. The result only shows the highest granularity, it is clear to see in the middle of the image that the most tweets are sent. If this layer was is combined with a map it would be clear that this region is directly above England
 
 \subsection{Requirements}
 Before recreating the given example all necessary installations should be made and the required files obtained. The following programs should be installed:
@@ -18,6 +20,7 @@ Also the following files should be at the ready:
 \todo[inline, size=\small]{Currently the files can be found in the \lstinline|RunningExample| directory in the same Git as this manual.}
 Furthermore it is useful to have a tool in which the PostgreSQL database can be managed. During development the tool pgAdmin\footnote{\url{http://www.pgadmin.org/}} was used.
 
+\pagebreak
 \subsection{Example Table Setup}
 The first step of the process is to have a dataset which will be aggregated. For this example a dataset is supplied in the form of a \lstinline|.csv| file. In order to import this first recreate the table in the database. This can be done with the following SQL query:
 \subsubsection{Recreating Dataset}
