@@ -1,6 +1,6 @@
 This section is going to discuss most of the possibilities that GeoServer has to offer when it comes to the visualization of the data. The GeoServer manual has some information on this subject, which can be found on: \url{http://docs.geoserver.org/2.5.x/en/user/styling/sld-reference/index.html}.
 
-The following sections will give some more information on what the differences are between the different options and some ways to implement the different options. This section will use some of the examples used in our demo to give some more insight what can be done and hopefully making it easier to realise what is wanted. Most information can be found on the website, below will be a discussion on what types are best used when, but also some more information on how to make them work properly.
+The following sections will give some more information on what the differences are between the different options and some ways to implement the different options. This section will use some of the examples used in our demo to give some more insight what can be done and hopefully making it easier to realize what is wanted. Most information can be found on the website, below will be a discussion on what types are best used when, but also some more information on how to make them work properly.
 
 \subsubsection{Symbolizers}
 
@@ -8,7 +8,7 @@ In SLD there are three different symbolizers, a linesymbolizer, a pointsymbolize
 
 A linesymbolizer is used when the data that has to be displayed is best shown in lines. This symbolizer is best used to display roads for example. It isn't a symbolizer that can be used to represent data very well, but it is more used for pre-defined data, think off rivers, roads etc.
 
-A polygonsymbolizer is used when the data that you want to represent has to be displayed in two-dimensional objects. There are many possibilities in a polygonsymbolizer. It is possible to make a simple square but it also has the option to make circles or triangles. It is one of the most commonly used symbolizers. It has the most potentional since you can do a lot with a polygonsymbolizer. A good example where a polygonsymbolizer is used, is to display the amount of people living in cities. This can be done with a circle polygon and that the circle will get bigger when more people live in a city.
+A polygonsymbolizer is used when the data that you want to represent has to be displayed in two-dimensional objects. There are many possibilities in a polygonsymbolizer. It is possible to make a simple square but it also has the option to make circles or triangles. It is one of the most commonly used symbolizers. It has the most potential since you can do a lot with a polygonsymbolizer. A good example where a polygonsymbolizer is used, is to display the amount of people living in cities. This can be done with a circle polygon and that the circle will get bigger when more people live in a city.
 
 \subsubsection{Filters}
 
@@ -61,7 +61,7 @@ This example will test if the \lstinline|testvalue| is less than \lstinline|200|
 
 What this example does is that if the \lstinline|testvalue| is below \lstinline|100|, it will fill a polygon with the color: \lstinline|#38FF19|. If this is not the case it will go to the next rule (if there is any otherwise it will just not do anything). The image shows a graph of the implementation we made for our data. The image has different kind of colors for the amount of data in a tile. If the amount is high the color will become more red and if there is little data the tile will be green. This is a good example on what can be done with filters.
 
-\subsubsection{Extra Options}
+\subsubsection{Additional Options}
 
 GeoGerver SLD has a lot of options when it comes to customizing the data display that you've made. Below are some of the important features that are commonly used in GeoServer.
 
@@ -82,7 +82,7 @@ GeoGerver SLD has a lot of options when it comes to customizing the data display
 </PointPlacement>
 \end{lstlisting}
 
-\textbf{Opacity:} Opacity is the transparency of either a label, point, polygon or line. It can be used to paint layers over each other (setting Opacity to 0), this is something used a lot incase multiple data has to be displayed in the same tile (used in our example as well). The way you use it is the following:
+\textbf{Opacity:} Opacity is the transparency of either a label, point, polygon or line. It can be used to paint layers over each other (setting Opacity to 0), this is something used a lot in case multiple data has to be displayed in the same tile (used in our example as well). The way you use it is the following:
 \begin{lstlisting}
 <Opacity>0.3</Opacity>
 \end{lstlisting}

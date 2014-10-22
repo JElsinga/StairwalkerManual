@@ -1,9 +1,10 @@
 \subsubsection{Description of Process}
 Stairwalker makes use of the Pre-Aggregate functions. These functions create a granularity in the dataset and calculate blocks at the lowest granularity for certain dimensions. Then subsequent blocks of higher granularity are built up from lower blocks. This creates a new dataset which as summarized the original dataset in terms of blocks which represent some significant data for every level of granularity and dimension.
 
+\todo[inline, size=\small]{I am not sure if this discription is correct. Also i believe there is an eloquenter way to discribe the aggregation process.}
 %Is dit duidelijk? Klopt dit eigenlijk??
 %Nog iets met index of zo...
-Concretely take the dataset of tweets sent within the netherlands. A pre-aggregation of this data could be in the following form. As significant data we consider the number of tweets in the x- and y-coordinate dimensions. We then set a highest granularity (zoom). The pre-aggregate algorithm then creates blocks bounded by the x- and y-coordinates at the highest granularity and for all those blocks calculates the number of tweets within those coordinates. Then each subsequent layer is built up from the previous layer. The final result is a new dataset which contains all blocks with the number of tweets in a coordinate block at each level of granularity.
+Concretely take the dataset of tweets sent within the Netherlands. A pre-aggregation of this data could be in the following form. As significant data we consider the number of tweets in the x- and y-coordinate dimensions. We then set a highest granularity (zoom). The pre-aggregate algorithm then creates blocks bounded by the x- and y-coordinates at the highest granularity and for all those blocks calculates the number of tweets within those coordinates. Then each subsequent layer is built up from the previous layer. The final result is a new dataset which contains all blocks with the number of tweets in a coordinate block at each level of granularity.
 
 \subsubsection{PreAggregate Tool}
 \label{sec:preaggtool}
@@ -13,7 +14,7 @@ mvn package appassembler:assemble
 \end{lstlisting}
 After successful completion of this command a new directory \lstinline|appassembler| will have been created in the \lstinline|target| directory containing a \lstinline|repo| and a \lstinline|bin| directory. The \lstinline|bin| directory contains the actual binaries of the tool (in both Linux/Unix and Windows version) and the \lstinline|repo| directory contains the tool dependencies. The tool should now be ready for use. An example of how to compile and use the tool to create a pre-aggregation index is given in \Fref{sec:examplePreAggIndex}.
 
-The tool is used to create a PreAggregate index for a table with $\textit{n}$ dimensions and a measure/aggregate column. It uses with the following commands:
+The tool is used to create a Pre-Aggregate index for a table with $\textit{n}$ dimensions and a measure/aggregate column. It uses with the following commands:
 \begin{lstlisting}[basicstyle=\small]
 usage: create-pa-index
  -axistosplit <axis index>    index of axis to split
@@ -36,12 +37,18 @@ The tool is dependent on the \lstinline|PreAggregate.XML| config file which is u
 See~\Fref{sec:PreAggregateDev} for more detail about creating a pre-aggregate index not using the special help tool.
 
 Apart from creating a new pre-aggregate index table \lstinline|<original-table-name>_pa| pre-aggregation also creates/updates two other tables, these are \lstinline|pre_aggregate| and \lstinline|pre_aggregate_axis|. These two tables are support tables for the aggregation. They contain information about which tables have been aggregated and which axis have been used in pre-aggregation.
-\subsubsection{Current Status Support of Datatypes}
-\begin{enumerate}
-	\item Aggregate Axis
-	\item Metric Axis
-	\item Nominal Axis
-\end{enumerate}
+
+\subsubsection{Current Status Support of Axis Types}
+The axises with which a dataset will be split are referred to in the code as \lstinline|AggregateAxis|es. An \lstinline|AggregateAxis| can be seen as a dimension in which the dataset will be divided. The term aggregate comes from the fact that these axis have a base size and all layers above the base size are built up by aggregating lower layer blocks. Currently the \lstinline|AggregateAxis| can be split into two different subtypes. The first is a \lstinline|MetricAxis| and the second is a \lstinline|NominalAxis|. Each type will briefly be discussed below with examples of data types which can be split using each respective axis.
+
+\paragraph{MetricAxis}
+A \lstinline|MetricAxis| can be seen as the default axis type, it supports a continues data type. Examples of such data types are coordinates and time.
+\todo[inline, size=\small]{Maybe this explaination should be extended with more details.}
+
+\paragraph{NominalAxis}
+A \lstinline|NominalAxis| is used to split non continues data. An example for such a data type is a word filter. A \lstinline|NominalAxis| can be used to split the data depending on if a text contains $x$ different words (predefined using a filter). In this case each previously created dimension is again split depending how many words in the filter the block contains. 
+
+Concretely if a word filter \lstinline|{dog,cat,mouse,horse,NOFILTER}| is used and a data block represents some text with the sentance \lstinline|`it's raining cats and dogs'| then three splits would be made. One on the word \lstinline|dog|, the second on \lstinline|cat| and the third on \lstinline|NOFILTER|.
 
 \subsubsection{Current Status Support of Aggregation Types}
 Currently there are 4 different aggregation types which can be used. These are discussed below. Note that there is an \lstinline|ALL| option which returns all aggregate types in the pre-aggregate index. Furthermore these types can be used to create other types such as average.
