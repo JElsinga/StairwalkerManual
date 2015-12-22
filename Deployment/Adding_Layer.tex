@@ -5,7 +5,14 @@
 %	\item On top select publish. Select the style which should display your data, select the style that has been made in the last step here. If there is no style that can be displayed, something went wrong and the last steps should be repeated.
 %	\item Once this is done press save and the layer should be added.
 %\end{enumerate}
-In GeoServer a layer refers to raster or vector data that contains geographic features. Layers represent each feature (axis in the pre-aggregate index) of a dataset that needs to be represented. All layers much have a source of the data which in this case was setup in \Fref{sec:addingsource}. More information about layers can be found in the \href{http://docs.geoserver.org/stable/en/user/webadmin/data/layers.html}{GeoServer User Manual}. 
+
+In GeoServer, a layer refers to raster or vector data that contains
+geographic features. Layers represent each feature (axis in the
+pre-aggregate index) of a dataset that needs to be represented. All layers
+much have a source of the data which in this case was setup in
+\Fref{sec:addingsource}. More information about layers can be found in the
+\href{http://docs.geoserver.org/stable/en/user/webadmin/data/layers.html}{GeoServer
+User Manual}. 
 
 Creating a layer for a pre-aggregate index dataset can be done as follows:
 
@@ -18,7 +25,12 @@ Creating a layer for a pre-aggregate index dataset can be done as follows:
 	\item Select the pre-aggregate index which should be visualized in a layer by clicking the \lstinline|Publish| link corresponding to the \lstinline|Layer name| of the aggregate index.
 \end{enumerate}
 
-\noindent At this point a layer has been selected to be published. This layer will be a visual representation of the data from the aggregation index created in \Fref{sec:preaggtool}. In order to make sure the correct geographical location is used in GeoServer and to give the layer a fitting style the following steps have to be taken in on the \lstinline|Edit Layer| page.
+\noindent At this point a layer has been selected to be published. This
+layer will be a visual representation of the data from the aggregation
+index created in \Fref{sec:preaggtool}. In order to make sure the correct
+geographical location is used in GeoServer and to give the layer a fitting
+style the following steps have to be taken in on the \lstinline|Edit Layer|
+page.
 
 \begin{enumerate}[resume]
 	\item In the \lstinline|Data| tab the following sections and fields should be filled in.
@@ -37,7 +49,10 @@ Creating a layer for a pre-aggregate index dataset can be done as follows:
 	\item Next in the \lstinline|Publishing| tab a style can be added to the layer, the default style of a layer is \lstinline|polygon|. In the section \lstinline|WMS Settings| the field \lstinline|Default| \lstinline|Style| can be changed by selecting the desired style from the drop-down menu. For more about styles and creating styles see \Fref{sec:addingstyle} and \Fref{sec:visualization}.
 \end{enumerate}
 
-\noindent If the aggregation index does not contain a time dimension the setup of the layer is now complete and can be saved. However if the aggregation index does have a time dimension some additional adjustments need to be made which are described below.
+\noindent If the aggregation index does not contain a time dimension the
+setup of the layer is now complete and can be saved. However if the
+aggregation index does have a time dimension some additional adjustments
+need to be made which are described below.
 
 \begin{enumerate}[resume]
 	\item Select the \lstinline|Dimensions| tab.
@@ -50,4 +65,10 @@ Creating a layer for a pre-aggregate index dataset can be done as follows:
 	\item Save the layer.
 \end{enumerate}
 
-The layer which represents the dataset with a style created in \Fref{sec:addingstyle} has now been created and is ready for use. A layer can be edited once it has been created so if changes need to be made a new layer should not be created. \Fref{sec:previewlayer} shows how to preview a layer and \Fref{sec:clientsidedev} discusses how to use a GeoServer layer with OpenLayers\footnote{\url{http://openlayers.org/}} to a geospacial visualization of the data on a web page.
+The layer which represents the dataset with a style created in
+\Fref{sec:addingstyle} has now been created and is ready for use. A layer
+can be edited once it has been created so if changes need to be made a new
+layer should not be created. \Fref{sec:previewlayer} shows how to preview a
+layer and \Fref{sec:clientsidedev} discusses how to use a GeoServer layer
+with OpenLayers\footnote{\url{http://openlayers.org/}} to a geospacial
+visualization of the data on a web page.

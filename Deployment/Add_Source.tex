@@ -7,7 +7,11 @@
 %	\item Once everything is filled in all, the source should have been added to the Geoserver. This can be checked by going to sources again and then it should display the source that has just been added.
 %\end{enumerate}
 
-Once logged in to the web administration interface it is possible to add a new data store to GeoServer. Instructions of how to add a new \lstinline|NeoGeo Aggregate| vector data source which contains the aggregate index created in \Fref{sec:preaggtool} to the stores in GeoServer.
+Once logged in to the web administration interface, it is possible to add a
+new data store to GeoServer. Below are instructions of how to add a new
+\lstinline|NeoGeo Aggregate| vector data source which contains the
+aggregate index created in \Fref{sec:preaggtool} to the stores in
+GeoServer.
 
 \begin{enumerate}
 	\item Navigate to \lstinline|Stores| by clicking on \lstinline|Stores| link under the \lstinline|Data| section in the navigator on the left hand side of the web administration interface homepage.
@@ -15,17 +19,20 @@ Once logged in to the web administration interface it is possible to add a new d
 	\item In the list of \lstinline|Vector Data Sources| the option \lstinline|NeoGeo Aggregate| should be present, choose this format for the data source.  
 \end{enumerate}
 
-\noindent If the option \lstinline|NeoGeo Aggregate| is not available it means the GeoServer extension from \Fref{sec:InstallExtension} was not done correctly.
+\noindent If the option \lstinline|NeoGeo Aggregate| is not available, it
+means the GeoServer extension from \Fref{sec:InstallExtension} was not done
+correctly.
 
 \begin{enumerate}[resume]
-	\item Clicking \lstinline|NeoGeo Aggregate| will open a new page titled \lstinline|New Vector Data Source| in which several fields have to be filled out, explanation of mandatory fields can be found in the list below on page \pageref{list:manditory}.
+	\item Clicking \lstinline|NeoGeo Aggregate| will open a new page titled \lstinline|New Vector Data Source| in which several fields have to be filled out, explanation of mandatory fields can be found in the list below.
 	\item For an express setup the fields which have already been filled can remain the same.
-	\item Once all the required fields are filled in click the \lstinline|Save| button.
-	\item A new \lstinline|NeoGeo Aggregate| source is now created and can be view and edited in \lstinline|Sources|.
-	\item After saving GeoServer opens the page \lstinline|New Layer| on which new layers can be created using the \lstinline|Data Source|. How this is done is discussed in \Fref{sec:addinglayers}.
+	\item Once all the required fields are filled, click the \lstinline|Save| button.
+	\item A new \lstinline|NeoGeo Aggregate| source is now created and can be viewed and edited in \lstinline|Sources|.
+	\item After saving, GeoServer opens the page \lstinline|New Layer| on which new layers can be created using the \lstinline|Data Source|. How this is done is discussed in \Fref{sec:addinglayers}.
 \end{enumerate}
 
-\noindent Here a list of all mandatory fields on the \lstinline|New Vector Data Source| page with explanation.
+\noindent Below a list is presented with all mandatory fields on the
+\lstinline|New Vector Data Source| page with explanation.
 
 \begin{itemize}\label{list:manditory}
 	\item \textbf{Data Source Name} - An arbitrary name which will be assigned to the store.
@@ -37,9 +44,10 @@ Once logged in to the web administration interface it is possible to add a new d
 	\item \textbf{Username} - Username of the used database.
 	\item \textbf{Password} - Password of the used database.
 	\item \textbf{xSize, ySize, timeSize} - Specifies the dimensions of the grid which is created for every view of the map to calculate the aggregates per cell. The higher the number of cells the more detailed the information. \\
-	\todo[inline, size=\small]{Are the xSize, ySize, timeSize dimensions not already set in the source? What happens when timeSize $> 1$?}
-	\item \textbf{count, sum, minimum, maximum} - Select the boxes of the aggregates which will be used in the visualization. Note that these basic aggregates more aggregates such as mean can can be derived.
-	\item \textbf{Enable server-side Stairwalker} - Selecting will cause the data source to rely on the use of the database plugins to use the Pre-Aggregate index. For performance reasons it is high recommended to use this option. See \Fref{sec:serversideextension} for more details.
-	\todo[inline, size=\small]{The Enable server-side Stairwalker ooption is no longer available? Remove?}
-	\item \textbf{Enable query logging} - Selecting will turn on the logging of all Pre-Aggregate queries into a separate table called \lstinline|pre_aggregate_logging|.
+	%\todo[inline, size=\small]{Are the xSize, ySize, timeSize dimensions not already set in the source? What happens when timeSize $> 1$?}
+	\item \textbf{count, sum, minimum, maximum} - Select the boxes of the
+	aggregates which will be used in the visualization. Note that from these basic aggregates more aggregates such as mean can can be derived.
+	\item \textbf{Enable server-side Stairwalker} - Selecting this causes the data source to rely on the use of the database plugins to use the Pre-Aggregate index. For performance reasons it is highly recommended to use this option. See \Fref{sec:serversideextension} for more details.
+%	\todo[inline, size=\small]{The Enable server-side Stairwalker ooption is no longer available? Remove?}
+	\item \textbf{Enable query logging} - Selecting this will turn on the logging of all Pre-Aggregate queries into a separate table called \lstinline|pre_aggregate_logging|.
 \end{itemize}

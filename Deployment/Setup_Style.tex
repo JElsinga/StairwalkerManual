@@ -13,9 +13,18 @@
 %This is just a basic manual on how to add a style, for more information or more explanation on how to make a style, check out the development chapter in this manual. In that section there are far more details on how to make a style.
 %
 
-In GeoServer styles are used to render, or make available, geospatial data. Styles are used to visually represent the aggregation index which is represented in a layer. In GeoServer layers are written in Styled Layer Descriptor (SLD) which is a subset of XML. GeoServer comes setup with several different styles however to get the most out of the dataset it is best to develop a style specific to the layer which represents that data.
+In GeoServer, styles are used to render, or make available, geospatial data.
+Styles are used to visually represent the aggregation index which is
+represented in a layer. In GeoServer layers are written in Styled Layer
+Descriptor (SLD) which is a subset of XML. GeoServer comes setup with
+several different styles, however, to get the most out of the dataset it is
+best to develop a style specific to the layer which represents that data.
 
-In this section only instructions on how to add new styles to GeoServer are given. For information on how to edit styles see \Fref{sec:visualization} or the GeoServer user manual\footnote{\url{http://docs.geoserver.org/stable/en/user/styling/index.html\#styling}} which gives an in depth guide on developing styles.
+In this section only instructions on how to add new styles to GeoServer are
+given. For information on how to edit styles, see \Fref{sec:visualization}
+or the GeoServer user
+manual\footnote{\url{http://docs.geoserver.org/stable/en/user/styling/index.html\#styling}}
+which gives an in depth guide on developing styles.
 
 \begin{enumerate}
 	\item Navigate to \lstinline|Styles| by clicking on the \lstinline|Styles| link under the \lstinline|Data| section in the navigator on the left hand side of the web administration interface homepage.
@@ -27,4 +36,4 @@ In this section only instructions on how to add new styles to GeoServer are give
 	\item It is possible to check the syntax of the SLD code by pressing the \lstinline|Validate| button at the bottom of the page. At the top the page GeoServer will give feedback on the SLD code, either error messages or a no validation errors message.
 	\item Finally the style can be saved by pressing the \lstinline|Submit| button at the bottom of the page.
 \end{enumerate}
-\todo[inline, size=\small]{We should maybe mention something about the workspace? What does \lstinline|nurc| represent? It is even important to choose a workspace?}
+%\todo[inline, size=\small]{We should maybe mention something about the workspace? What does \lstinline|nurc| represent? It is even important to choose a workspace?}
